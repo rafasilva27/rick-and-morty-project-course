@@ -1,0 +1,67 @@
+<template>
+  <section class="flex flex-col w-full max-w-[1224px] mx-auto gap-8">
+
+    <div v-if="pending" class="text-center">
+      <p>Carregando...</p>
+    </div>
+
+    <div v-else-if="error" class="text-center text-red-500">
+      <p>Erro ao carregar personagem: {{ error.message }}</p>
+    </div>
+
+    <div v-else-if="data" class="flex p-16">
+
+      <div class="flex-1">
+        <img :src="data.image" class="object-cover rounded-lg">
+      </div>
+
+      <div class="flex-1">
+        <p class="text-5xl font-bold">
+          {{ data.name }}
+        </p>
+        <span>
+          <IconsHeartFilled v-if="data.status === 'Alive'" />
+          <IconsHeartOutlined v-else />
+        </span>
+        <p>Participou de {{ data.episode?.length || 0 }} episódios</p>
+
+        <div class="flex gap-6">
+          <p>
+            {{ data.status === "Alive" ? "Vivo" : "Morto" }}
+          </p>
+          <p>{{ data.species }}</p>
+          <p>{{ data.gender }}</p>
+        </div>
+
+        <div class="flex gap-8">
+          <Card class="flex-col items-center">
+            <p>Planeta</p>
+            <p class="text-[#11B0C8]">{{ data.origin.name }}</p>
+            <span>
+              <IconsHeartFilled v-if="data.status === 'Alive'" />
+              <IconsHeartOutlined v-else />
+            </span>
+          </Card>
+
+          <Card class="flex-col items-center">
+            <p class="break-words w-24 text-center">{{ data.location.name }}</p>
+            <span>
+              <IconsHeartFilled v-if="data.status === 'Alive'" />
+              <IconsHeartOutlined v-else />
+            </span>
+          </Card>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</template>
+
+<script setup>
+
+const route = useRoute();
+const characterId = route.params.id // Obtém o ID do personagem da rota
+
+const { data, pending, error } = await useFetch(`https://rickandmortyapi.com/api/character/${characterId}`);
+</script>
