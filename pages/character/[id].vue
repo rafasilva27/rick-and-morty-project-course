@@ -9,42 +9,63 @@
       <p>Erro ao carregar personagem: {{ error.message }}</p>
     </div>
 
-    <div v-else-if="data" class="flex p-16">
+    <div v-else-if="data" class="flex p-14">
 
-      <div class="flex-1">
+      <div class="w-[30%]">
         <img :src="data.image" class="object-cover rounded-lg">
       </div>
 
-      <div class="flex-1">
-        <p class="text-5xl font-bold">
-          {{ data.name }}
-        </p>
-        <span>
-          <IconsHeartFilled v-if="data.status === 'Alive'" />
-          <IconsHeartOutlined v-else />
-        </span>
-        <p>Participou de {{ data.episode?.length || 0 }} episódios</p>
-
-        <div class="flex gap-6">
-          <p>
-            {{ data.status === "Alive" ? "Vivo" : "Morto" }}
+      <div class="w-[70%] flex flex-col gap-8">
+        <div class="flex gap-5">
+          <p class="text-5xl font-bold">
+            {{ data.name }}
           </p>
-          <p>{{ data.species }}</p>
-          <p>{{ data.gender }}</p>
+          <span>
+            <IconsHeartFilled v-if="data.status === 'Alive'" />
+            <IconsHeartOutlined v-else />
+          </span>
         </div>
 
-        <div class="flex gap-8">
-          <Card class="flex-col items-center">
+        <div class="flex gap-2 text-xl items-center">
+          <IconsPlay />
+          <p>Participou de {{ data.episode?.length || 0 }} episódios</p>
+        </div>
+
+        <div class="flex gap-6 text-2xl">
+          <div class="flex gap-2 items-center">
+            <IconsPulse />
+            <p>
+              {{ data.status === "Alive" ? "Vivo" : "Morto" }}
+            </p>
+          </div>
+
+           <div class="flex gap-2 items-center">
+            <IconsAlien />
+             <p>{{ data.species === "Human" ? "Humano" : "Alien" }}</p>
+           </div>
+
+            <div class="flex gap-2 items-center">
+              <IconsGenderMale v-if="data.gender === 'Male'" />
+              <IconsGenderFemale v-else />
+              <p>{{ data.gender === "Male" ? "Masculino" : "Feminino" }}</p>
+            </div>
+
+        </div>
+
+        <div class="flex gap-8 justify-end">
+          <Card class="flex-col items-center max-w-[140px] relative gap-[4px]">
+            <IconsPlanet class="top-[-32px] absolute" />
             <p>Planeta</p>
-            <p class="text-[#11B0C8]">{{ data.origin.name }}</p>
+            <p class="text-[#11B0C8] text-center">{{ data.origin.name }}</p>
             <span>
               <IconsHeartFilled v-if="data.status === 'Alive'" />
               <IconsHeartOutlined v-else />
             </span>
           </Card>
 
-          <Card class="flex-col items-center">
-            <p class="break-words w-24 text-center">{{ data.location.name }}</p>
+          <Card class="flex-col items-center max-w-[140px] relative">
+            <IconsMap class="top-[-35px] absolute" />
+            <p class="text-center">{{ data.location.name }}</p>
             <span>
               <IconsHeartFilled v-if="data.status === 'Alive'" />
               <IconsHeartOutlined v-else />

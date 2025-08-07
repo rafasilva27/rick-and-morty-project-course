@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col w-full max-w-[1224px] mx-auto gap-8">
-    <Header title="Episódios" />
+    <CustomTitle title="Episódios" />
 
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       <Card v-for="currentEpisode in data.results" class="flex flex-col justify-between">

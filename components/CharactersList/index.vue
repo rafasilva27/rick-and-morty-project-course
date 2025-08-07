@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col w-full max-w-[1224px] mx-auto gap-8">
-    <Header title="Personagens" />
+    <CustomTitle title="Personagens" />
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
       <Card v-for="currentCharacter in data.results" class="justify-between">
@@ -14,7 +14,7 @@
               <p>
                 {{ currentCharacter.status === "Alive" ? "Vivo" : "Morto" }}
               </p>
-              <p>{{ currentCharacter.species }}</p>
+              <p>{{ currentCharacter.species === "Human" ? "Humano" : "Alien" }}</p>
               <p>{{ currentCharacter.origin.name }}</p>
             </div>
           </div>
