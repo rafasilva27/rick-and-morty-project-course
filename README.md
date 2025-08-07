@@ -1,75 +1,28 @@
-# Nuxt Minimal Starter
+# Rick and Morty - Nuxt
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Este é um projeto desenvolvido com Nuxt 3, que consome a Rick and Morty API para exibir informações sobre personagens, episódios e localizações da série. A estilização foi feita com Tailwind CSS, e o design foi inspirado em uma interface disponível na comunidade do Figma.
 
-## Setup
+## Instalação
 
-Make sure to install dependencies:
+Certifique-se de ter o Node.js instalado. Em seguida, instale as dependências do projeto:
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Ambiente de Desenvolvimento
 
-Start the development server on `http://localhost:3000`:
+Para iniciar o servidor de desenvolvimento em `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+## Estilização
 
-Build the application for production:
+O projeto utiliza o Tailwind CSS toda a parte visual e responsiva da interface. O design foi inspirado no projeto da comunidade "Rick and Morty" do Figma, disponível em:
 
-```bash
-# npm
-npm run build
+- [Figma Community - Rick and Morty UI](https://www.figma.com/community/file/1225458908057208058)
 
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## API
+O aplicativo consome a API pública, disponível em - [Rick and Morty API](https://rickandmortyapi.com/). A API fornece dados sobre os personagens, episódios e locais do desenho.
