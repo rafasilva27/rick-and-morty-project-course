@@ -25,7 +25,7 @@
         </div>
 
         <DetailsButton :actionUrl="`/character/${currentCharacter.id}`" />
-        <!-- Link para ver detalhes -->
+        <!-- Link para acessar a página do personagem -->
       </Card>
     </div>
   </section>

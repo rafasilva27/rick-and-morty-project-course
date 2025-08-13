@@ -39,16 +39,16 @@
             </p>
           </div>
 
-           <div class="flex gap-2 items-center">
+          <div class="flex gap-2 items-center">
             <IconsAlien :color="isDark ? '#fff' : '#000'" />
-             <p>{{ data.species === "Human" ? "Humano" : "Alien" }}</p>
-           </div>
+            <p>{{ data.species === "Human" ? "Humano" : "Alien" }}</p>
+          </div>
 
-            <div class="flex gap-2 items-center">
-              <IconsGenderMale v-if="data.gender === 'Male'" :color="isDark ? '#fff' : '#000'"/>
-              <IconsGenderFemale v-else :color="isDark ? '#fff' : '#000'"/>
-              <p>{{ data.gender === "Male" ? "Masculino" : "Feminino" }}</p>
-            </div>
+          <div class="flex gap-2 items-center">
+            <IconsGenderMale v-if="data.gender === 'Male'" :color="isDark ? '#fff' : '#000'" />
+            <IconsGenderFemale v-else :color="isDark ? '#fff' : '#000'" />
+            <p>{{ data.gender === "Male" ? "Masculino" : "Feminino" }}</p>
+          </div>
 
         </div>
 
@@ -80,9 +80,9 @@
 </template>
 
 <script setup>
-import { useTheme } from '../composables/useTheme';
+import { useTheme } from '../../components/composables/useTheme';
 
-const {isDark} = useTheme()
+const { isDark } = useTheme()
 const route = useRoute();
 const characterId = route.params.id // Obtém o ID do personagem da rota
 

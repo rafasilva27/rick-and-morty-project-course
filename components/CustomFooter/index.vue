@@ -24,9 +24,9 @@
 </template>
 
 <script setup>
-import { useTheme } from '~/pages/composables/useTheme';
+import { useTheme } from '~/components/composables/useTheme';
 
-const {isDark} = useTheme()
+const { isDark } = useTheme()
 
 const scrollToTop = () => {
   window.scrollTo({

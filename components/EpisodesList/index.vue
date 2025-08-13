@@ -10,7 +10,7 @@
         </div>
 
         <div class="flex justify-between items-center gap-2">
-          <DetailsButton :actionUrl="currentEpisode.url" />
+          <DetailsButton :actionUrl="`/episode/${currentEpisode.id}`" />
           <IconsHeartFilled :width="32" :height="32" />
         </div>
       </Card>
@@ -19,9 +19,9 @@
 </template>
 
 <script setup>
-import { useTheme } from '~/pages/composables/useTheme';
+import { useTheme } from '~/components/composables/useTheme';
 
-const {isDark} = useTheme()
+const { isDark } = useTheme()
 
 const { data } = await useFetch("https://rickandmortyapi.com/api/episode");
 </script>
