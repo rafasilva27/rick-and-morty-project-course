@@ -4,7 +4,7 @@
     <div class="flex justify-between items-center">
       <IconsLogo />
       <div @click="scrollToTop" class="flex gap-2 items-center cursor-pointer">
-        <p class="text-sm">Voltar ao topo</p>
+        <p class="text-sm text-[#313234] dark:text-white">Voltar ao topo</p>
         <IconsArrowUp />
       </div>
     </div>
@@ -24,6 +24,9 @@
 </template>
 
 <script setup>
+import { useTheme } from '~/pages/composables/useTheme';
+
+const {isDark} = useTheme()
 
 const scrollToTop = () => {
   window.scrollTo({

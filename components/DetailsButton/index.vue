@@ -2,7 +2,7 @@
   <NuxtLink
     :to="actionUrl"
     target="_blank"
-    class="self-end bg-[#11B0C8] rounded-3xl py-1 px-3 flex gap-2 text-sm items-center"
+    class="self-end bg-[#11B0C8] rounded-3xl py-1 px-3 flex gap-2 text-sm items-center text-white"
   >
     <IconsInfo />
     Saiba mais

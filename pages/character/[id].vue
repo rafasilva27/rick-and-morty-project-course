@@ -27,7 +27,7 @@
         </div>
 
         <div class="flex gap-2 text-xl items-center">
-          <IconsPlay />
+          <IconsPlay :color="isDark ? '#fff' : '#000'" />
           <p>Participou de {{ data.episode?.length || 0 }} episódios</p>
         </div>
 
@@ -40,13 +40,13 @@
           </div>
 
            <div class="flex gap-2 items-center">
-            <IconsAlien />
+            <IconsAlien :color="isDark ? '#fff' : '#000'" />
              <p>{{ data.species === "Human" ? "Humano" : "Alien" }}</p>
            </div>
 
             <div class="flex gap-2 items-center">
-              <IconsGenderMale v-if="data.gender === 'Male'" />
-              <IconsGenderFemale v-else />
+              <IconsGenderMale v-if="data.gender === 'Male'" :color="isDark ? '#fff' : '#000'"/>
+              <IconsGenderFemale v-else :color="isDark ? '#fff' : '#000'"/>
               <p>{{ data.gender === "Male" ? "Masculino" : "Feminino" }}</p>
             </div>
 
@@ -80,7 +80,9 @@
 </template>
 
 <script setup>
+import { useTheme } from '../composables/useTheme';
 
+const {isDark} = useTheme()
 const route = useRoute();
 const characterId = route.params.id // Obtém o ID do personagem da rota
 
